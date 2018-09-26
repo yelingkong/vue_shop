@@ -19,10 +19,10 @@ new Vue({
     methods:{
         getAddressList:function(){
             var that=this;
-            this.$http.get("data/address.json").then(function(response){
-                var res= response.data;
-                if(res.status=="0"){
-                    that.addressList=res.result;
+            axios.get("data/address.json").then(function(res){
+                var _res= res.data;
+                if(_res.status=="0"){
+                    that.addressList=_res.result;
                 }
             });
         },
